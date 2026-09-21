@@ -1,0 +1,16 @@
+const questions=[
+{q:"Por que a Constituição de 1824 é considerada outorgada?",o:["Porque foi aprovada por plebiscito","Porque foi concedida pelo imperador","Porque foi escrita pelo Senado","Porque surgiu após a República"],a:1},
+{q:"Qual forma de governo foi definida pela Constituição de 1824?",o:["República presidencialista","Monarquia absoluta","Monarquia constitucional e hereditária","Confederação provincial"],a:2},
+{q:"Qual critério limitava o direito ao voto?",o:["Idade militar","Renda","Formação universitária","Religião estrangeira"],a:1},
+{q:"Quantos poderes compunham a organização política imperial?",o:["Dois","Três","Quatro","Cinco"],a:2},
+{q:"Quem exercia privativamente o Poder Moderador?",o:["O Senado","A Câmara","O imperador","Os presidentes de província"],a:2},
+{q:"Como era formado o Poder Legislativo?",o:["Câmara e Senado","Conselho e Exército","Senado e Judiciário","Câmara e Igreja"],a:0},
+{q:"Qual destas era uma atribuição associada ao Poder Moderador?",o:["Eleger diretamente os deputados","Dissolver a Câmara","Criar eleições universais","Abolir o Poder Executivo"],a:1},
+{q:"Qual questão resume o debate sobre o Poder Moderador?",o:["Indústria ou agricultura?","Monarquia ou colônia?","Equilíbrio institucional ou concentração de poder?","Litoral ou interior?"],a:2}
+];
+let qi=0,answers=Array(questions.length).fill(null);const content=document.querySelector('#quizContent');
+function render(){const q=questions[qi];document.querySelector('#questionCount').textContent=`Questão ${qi+1} de ${questions.length}`;document.querySelector('#quizProgress').style.width=`${((qi+1)/questions.length)*100}%`;content.innerHTML=`<div class="question"><h3>${q.q}</h3><div class="options">${q.o.map((x,i)=>`<button class="option ${answers[qi]===i?'selected':''}" data-i="${i}"><strong>${String.fromCharCode(65+i)}.</strong> ${x}</button>`).join('')}</div></div>`;document.querySelectorAll('.option').forEach(b=>b.onclick=()=>{answers[qi]=Number(b.dataset.i);render();updateScore()});document.querySelector('#prevQuestion').disabled=qi===0;document.querySelector('#nextQuestion').textContent=qi===questions.length-1?'Finalizar':'Próxima'}
+function score(){return answers.reduce((s,v,i)=>s+(v===questions[i].a?1:0),0)}function updateScore(){document.querySelector('#scoreBadge').textContent=`${score()} pontos`}
+document.querySelector('#prevQuestion').onclick=()=>{if(qi>0){qi--;render()}};document.querySelector('#nextQuestion').onclick=()=>{if(answers[qi]===null){alert('Escolha uma alternativa para continuar.');return}if(qi<questions.length-1){qi++;render()}else finish()};
+function finish(){const s=score();localStorage.setItem('quizFinished','yes');localStorage.setItem('quizScore',s);if(typeof setProgress==='function')setProgress(100);content.innerHTML=`<div class="quiz-result"><p class="eyebrow">Quiz concluído</p><strong>${s}/8</strong><h3>${s>=6?'Excelente resultado!':'Boa tentativa! Revise a trilha e tente novamente.'}</h3><p>Seu certificado simbólico agora está disponível na seção Materiais.</p><button class="btn" id="restartQuiz">Refazer quiz</button></div>`;document.querySelector('.quiz-actions').style.display='none';document.querySelector('#restartQuiz').onclick=()=>{qi=0;answers.fill(null);document.querySelector('.quiz-actions').style.display='flex';render();updateScore()}}
+render();updateScore();

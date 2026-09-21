@@ -1,0 +1,22 @@
+COMO ABRIR
+1. Extraia o arquivo ZIP.
+2. Abra index.html no navegador.
+
+COMO COLOCAR O VIDEO DO YOUTUBE
+1. Abra assets/js/main.js.
+2. Localize: const YOUTUBE_VIDEO_ID = "";
+3. Cole apenas o codigo final do video entre as aspas.
+Exemplo: no link youtube.com/watch?v=ABC123, use "ABC123".
+
+COMO USAR VIDEO MP4
+1. Crie a pasta assets/video.
+2. Coloque o MP4 nela.
+3. Em assets/js/main.js, preencha LOCAL_VIDEO_FILE com "assets/video/aula.mp4".
+
+COMO COLOCAR O PDF
+1. Renomeie para Brasil-Imperio.pdf.
+2. Coloque na pasta materiais.
+3. O proprio site exibe a orientacao para transformar o card em download.
+
+DICA
+Para visualizar durante a edicao, use a extensao Live Server no VS Code.

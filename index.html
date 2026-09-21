@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Plataforma educacional sobre a Constituição de 1824, os Quatro Poderes e o Poder Moderador.">
+  <title>Academia Imperial | Brasil Império</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div id="loader" class="loader"><div class="loader-mark">AI</div><p>Preparando sua aula...</p></div>
+
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Academia Imperial, início">
+      <span><strong>Academia Imperial</strong><small>História do Brasil</small></span>
+    </a>
+    <button id="menuBtn" class="icon-btn menu-btn" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav id="nav" class="nav" aria-label="Navegação principal">
+      <a class="active" href="#inicio">Início</a>
+      <a href="#aula">Videoaula</a>
+      <a href="#trilha">Trilha</a>
+      <a href="#poderes">Quatro Poderes</a>
+      <a href="#quiz">Quiz</a>
+      <a href="#materiais">Materiais</a>
+    </nav>
+    <div class="top-actions">
+      <button id="themeBtn" class="icon-btn" aria-label="Alternar tema">◐</button>
+      <a class="btn btn-small" href="#aula">Começar aula</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero section">
+      <div class="hero-ornament ornament-one"></div><div class="hero-ornament ornament-two"></div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Curso especial • Brasil Império</p>
+        <h1>Por dentro da <em>Constituição de 1824</em></h1>
+        <p class="hero-text">Uma jornada visual pela criação da primeira Constituição brasileira, pela estrutura dos quatro poderes e pelo alcance político do Poder Moderador.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#aula">▶ Assistir à aula</a>
+          <a class="btn btn-ghost" href="#trilha">Explorar conteúdo</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>12</strong><span>etapas de estudo</span></div>
+          <div><strong>8</strong><span>questões no quiz</span></div>
+          <div><strong>1</strong><span>certificado simbólico</span></div>
+        </div>
+      </div>
+      <div class="hero-art reveal" aria-label="Composição gráfica inspirada no período imperial">
+        <div class="arch-card">
+          <span class="arch-year">1824</span>
+          <div class="crown">♛</div>
+          <h2>A Carta Imperial</h2>
+          <p>“A chave de toda a organização política”</p>
+          <div class="arch-lines"><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="floating-note note-a">Monarquia constitucional</div>
+        <div class="floating-note note-b">Poder Moderador</div>
+      </div>
+    </section>
+
+    <section class="marquee" aria-label="Principais temas"><div>CONSTITUIÇÃO DE 1824 ✦ QUATRO PODERES ✦ PODER MODERADOR ✦ BRASIL IMPÉRIO ✦ CONSTITUIÇÃO DE 1824 ✦ QUATRO PODERES ✦</div></section>
+
+    <section id="aula" class="section lesson-section">
+      <div class="section-heading reveal"><div><p class="eyebrow">Aula principal</p><h2>Assista e acompanhe</h2></div><p>Coloque seu vídeo do YouTube ou um arquivo MP4 local. As instruções estão logo abaixo do player.</p></div>
+      <div class="lesson-grid">
+        <div class="video-shell reveal">
+          <div class="video-frame" id="videoFrame">
+            <div id="videoPlaceholder" class="video-placeholder">
+              <span class="play-orb">▶</span>
+              <h3>Seu vídeo aparecerá aqui</h3>
+              <p>Edite o arquivo <code>assets/js/main.js</code> e cole o código do seu vídeo.</p>
+              <button class="btn" id="openHelp">Como colocar meu vídeo</button>
+            </div>
+            <iframe id="youtubePlayer" title="Videoaula Brasil Império" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen hidden></iframe>
+            <video id="localPlayer" controls hidden><source id="localSource" src="" type="video/mp4"></video>
+          </div>
+          <div class="video-toolbar"><span>Videoaula: organização política do Império</span><button id="completeLesson" class="text-btn">✓ Marcar como concluída</button></div>
+        </div>
+        <aside class="course-panel reveal">
+          <div class="progress-card">
+            <div class="progress-head"><span>Seu progresso</span><strong id="progressText">0%</strong></div>
+            <div class="progress-track"><i id="progressBar"></i></div>
+          </div>
+          <h3>Roteiro da aula</h3>
+          <button class="lesson-item" data-topic="origem"><span>01</span><div><strong>Da Constituinte à outorga</strong><small>1823 → 1824</small></div><b>›</b></button>
+          <button class="lesson-item" data-topic="bases"><span>02</span><div><strong>Bases do Estado imperial</strong><small>Direitos, religião e voto</small></div><b>›</b></button>
+          <button class="lesson-item" data-topic="poderes"><span>03</span><div><strong>Os quatro poderes</strong><small>Arquitetura constitucional</small></div><b>›</b></button>
+          <button class="lesson-item" data-topic="moderador"><span>04</span><div><strong>O Poder Moderador</strong><small>O centro do sistema</small></div><b>›</b></button>
+        </aside>
+      </div>
+    </section>
+
+    <section id="trilha" class="section trail-section">
+      <div class="section-heading reveal"><div><p class="eyebrow">Trilha de aprendizagem</p><h2>Entenda o processo</h2></div><p>Clique em cada etapa para abrir uma explicação curta e objetiva.</p></div>
+      <div class="timeline">
+        <button class="timeline-card reveal" data-modal="1823"><span>1823</span><h3>Assembleia Constituinte</h3><p>Conflitos sobre os limites da autoridade imperial.</p><b>Saiba mais →</b></button>
+        <button class="timeline-card reveal" data-modal="agonia"><span>Nov. 1823</span><h3>Noite da Agonia</h3><p>A Constituinte foi dissolvida por ordem de D. Pedro I.</p><b>Saiba mais →</b></button>
+        <button class="timeline-card reveal" data-modal="1824"><span>25 mar. 1824</span><h3>Constituição outorgada</h3><p>A primeira Carta brasileira entrou em vigor.</p><b>Saiba mais →</b></button>
+        <button class="timeline-card reveal" data-modal="1889"><span>1889</span><h3>Fim da vigência</h3><p>A Constituição acompanhou todo o período imperial.</p><b>Saiba mais →</b></button>
+      </div>
+    </section>
+
+    <section id="poderes" class="section powers-section">
+      <div class="section-heading reveal"><div><p class="eyebrow">Arquitetura do Estado</p><h2>Quatro poderes, um centro</h2></div><p>Selecione os cartões para comparar funções e limites.</p></div>
+      <div class="power-layout">
+        <div class="power-wheel reveal">
+          <button class="power-node active" data-power="moderador"><span>♛</span>Moderador</button>
+          <button class="power-node" data-power="executivo"><span>⚙</span>Executivo</button>
+          <button class="power-node" data-power="legislativo"><span>▤</span>Legislativo</button>
+          <button class="power-node" data-power="judiciario"><span>⚖</span>Judiciário</button>
+          <div class="wheel-center"><small>Constituição</small><strong>1824</strong></div>
+        </div>
+        <article id="powerDetail" class="power-detail reveal">
+          <p class="eyebrow">Poder IV</p><h3>Poder Moderador</h3>
+          <p>Exercido privativamente pelo imperador, foi apresentado como mecanismo de equilíbrio entre as instituições, mas possibilitava intervenção direta na dinâmica política.</p>
+          <ul><li>Nomeação e demissão de ministros</li><li>Escolha de senadores em listas provinciais</li><li>Convocação e dissolução da Câmara</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section debate-section">
+      <div class="debate-card reveal"><p class="eyebrow">Debate historiográfico</p><h2>Equilíbrio institucional ou concentração de poder?</h2><p>O sistema podia favorecer estabilidade e unidade política, mas também reduzia a autonomia dos demais poderes e ampliava o alcance da Coroa.</p><div class="debate-columns"><div><strong>Argumento favorável</strong><p>Mediação de conflitos e continuidade institucional.</p></div><div><strong>Argumento crítico</strong><p>Interferência imperial e participação política reduzida.</p></div></div></div>
+    </section>
+
+    <section id="quiz" class="section quiz-section">
+      <div class="section-heading reveal"><div><p class="eyebrow">Desafio final</p><h2>Teste seus conhecimentos</h2></div><p>São oito questões. O resultado fica salvo no navegador.</p></div>
+      <div class="quiz-wrap reveal">
+        <div class="quiz-top"><span id="questionCount">Questão 1 de 8</span><span id="scoreBadge">0 pontos</span></div>
+        <div class="quiz-progress"><i id="quizProgress"></i></div>
+        <div id="quizContent"></div>
+        <div class="quiz-actions"><button id="prevQuestion" class="btn btn-ghost-dark">Anterior</button><button id="nextQuestion" class="btn">Próxima</button></div>
+      </div>
+    </section>
+
+    <section id="materiais" class="section materials-section">
+      <div class="section-heading reveal"><div><p class="eyebrow">Biblioteca</p><h2>Materiais de apoio</h2></div><p>Recursos preparados para revisar e apresentar o conteúdo.</p></div>
+      <div class="materials-grid">
+        <a class="material-card reveal" href="materiais/resumo.html" target="_blank"><span>01</span><div><h3>Resumo para revisão</h3><p>Conteúdo essencial em uma página imprimível.</p></div><b>↗</b></a>
+        <a class="material-card reveal" href="materiais/roteiro-video.txt" download><span>02</span><div><h3>Roteiro do vídeo</h3><p>Texto-base para organizar a narração.</p></div><b>↓</b></a>
+        <button class="material-card reveal" id="pdfButton"><span>03</span><div><h3>Apresentação em PDF</h3><p>Veja como adicionar o seu arquivo ao projeto.</p></div><b>?</b></button>
+        <button class="material-card reveal" id="certificateButton"><span>04</span><div><h3>Certificado simbólico</h3><p>Disponível após finalizar o quiz.</p></div><b>⌁</b></button>
+      </div>
+    </section>
+
+    <section class="section cta-section reveal"><div><p class="eyebrow">Conclusão</p><h2>O imperador não apenas governava.<br>Também arbitrava o sistema.</h2><a class="btn" href="#inicio">Revisar desde o início ↑</a></div></section>
+  </main>
+
+  <footer><div class="footer-brand"><span class="brand-seal">AI</span><div><strong>Academia Imperial</strong><p>Projeto educacional sobre o Brasil Império.</p></div></div><p>Desenvolvido por <strong>Carlos Alberto Pinheiro Filho</strong> • 2026</p></footer>
+
+  <dialog id="infoModal" class="modal"><button class="modal-close" aria-label="Fechar">×</button><p id="modalEyebrow" class="eyebrow"></p><h2 id="modalTitle"></h2><div id="modalBody"></div></dialog>
+  <dialog id="certificateModal" class="modal certificate-modal"><button class="modal-close" aria-label="Fechar">×</button><div id="certificate" class="certificate"><p>Academia Imperial</p><h2>Certificado de conclusão</h2><span>Certificamos simbolicamente que</span><input id="studentName" value="Carlos Alberto Pinheiro Filho" aria-label="Nome no certificado"><span>concluiu a trilha sobre Constituição de 1824 e Poder Moderador.</span><strong id="certificateScore"></strong><small>Projeto educacional • 2026</small></div><button id="printCertificate" class="btn">Imprimir / Salvar em PDF</button></dialog>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/quiz.js"></script>
+</body></html>
